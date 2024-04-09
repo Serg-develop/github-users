@@ -13,6 +13,7 @@ import {
   TablePagination,
   TextField,
   Typography,
+  Avatar,
 } from "@mui/material";
 import useGitHubUsers from "../../hooks/use-github-users";
 import { debounce } from "../../helpers";
@@ -102,10 +103,10 @@ const Users = () => {
                         sx={{ cursor: "pointer" }}
                       >
                         <TableCell>
-                          <img
+                          <Avatar
                             src={user.avatar_url}
                             alt={user.login}
-                            style={{ height: 50, borderRadius: "50%" }}
+                            sx={{ width: 50, height: 50 }}
                           />
                         </TableCell>
                         <TableCell>{user.login}</TableCell>
