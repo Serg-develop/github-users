@@ -25,7 +25,7 @@ To get the project running on your local machine, follow these steps:
 1. **Clone the Repository**
 
 ```bash
-git clone
+git clone https://github.com/Serg-develop/github-users.git
 cd github-user-search-app
 
 npm install

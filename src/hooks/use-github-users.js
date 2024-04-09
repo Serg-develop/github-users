@@ -11,9 +11,11 @@ const useGitHubUsers = ({ search, page, perPage }) => {
       setError(null);
 
       try {
-        const querySting =
-          `q=` + encodeURIComponent(`${search} type:User in:login,name`);
-        const url = `https://api.github.com/search/users?${querySting}&per_page=${perPage}&page=${page}`;
+        const queryString = `q=${encodeURIComponent(
+          `${search} type:User in:login,name`
+        )}&per_page=${perPage}&page=${page}`;
+
+        const url = `https://api.github.com/search/users?${queryString}`;
 
         const response = await fetch(url);
         const result = await response.json();

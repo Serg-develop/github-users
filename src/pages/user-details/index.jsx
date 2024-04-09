@@ -27,7 +27,6 @@ const UserDetails = () => {
   const navigate = useNavigate();
   const { data: user, loading, error } = useGitHubUserDetails(login);
 
-  // Adjust here for consistency
   if (loading)
     return (
       <Box
