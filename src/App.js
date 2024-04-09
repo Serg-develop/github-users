@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CssBaseline, Container } from "@mui/material";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserListPage from "./pages/users";
+import UserDetailsPage from "./pages/user-details";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Routes>
+          <Route exact path="/" element={<UserListPage />} />
+          <Route path="/user/:login" element={<UserDetailsPage />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
